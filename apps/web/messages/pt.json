@@ -1,0 +1,53 @@
+{
+  "site": {
+    "name": "TODO: Nome do Site",
+    "tagline": "TODO: Slogan do Site",
+    "description": "TODO: Descrição do site para SEO (150-160 caracteres)"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "projects": "Projetos",
+    "blog": "Blog",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "TODO: Título Hero",
+    "subtitle": "TODO: Subtítulo Hero",
+    "cta": {
+      "primary": "TODO: CTA Primário",
+      "secondary": "TODO: CTA Secundário"
+    }
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro ao carregar",
+    "tryAgain": "Tentar novamente",
+    "close": "Fechar",
+    "send": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "readMore": "Saiba mais",
+    "learnMore": "Saiba mais"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Estamos aqui para ajudar",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "message": "Mensagem",
+      "send": "Enviar mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar mensagem. Tente novamente."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  }
+}

@@ -1,0 +1,550 @@
+/* ===== RESET & VARIÁVEIS ===== */
+/* Removido reset universal para não conflitar com Tailwind base, mantendo apenas variáveis */
+
+:root {
+    /* Cores do Manual de Identidade */
+    --navy: #1A3A52;
+    --gold: #D4AF37;
+    --off-white: #F8F9FA;
+    --charcoal: #2C3E50;
+    --gray: #6B7280;
+
+    /* Tipografia do Manual */
+    --font-display: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    line-height: 1.7;
+    background: var(--off-white);
+}
+
+/* ===== HEADER & NAVEGAÇÃO ===== */
+header {
+    background: var(--navy);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(26, 58, 82, 0.15);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* ===== HERO SECTION ===== */
+/* Inspirado no briefing: "Energia que não acaba. Clareza que transforma." */
+.hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #0F2537 100%);
+    color: white;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elemento decorativo sutil (não psicodélico, apenas elegante) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text h1 .highlight {
+    color: var(--gold);
+    display: block;
+    font-style: italic;
+}
+
+.hero-text .subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-text .tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 3rem;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.5rem;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background: #F4D03F;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* Espaço para foto (P&B conforme manual) */
+.hero-image {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image p {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+/* ===== SOBRE SECTION ===== */
+/* História: Skatista → Tatuador → Instrutor */
+.sobre {
+    padding: 6rem 2rem;
+    background: white;
+}
+
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray);
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.timeline-item {
+    background: var(--off-white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-8px);
+}
+
+.timeline-year {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.timeline-text {
+    color: var(--charcoal);
+    line-height: 1.7;
+}
+
+/* Stats inspiradas no briefing */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    background: linear-gradient(135deg, var(--navy), #0F2537);
+    padding: 3rem;
+    border-radius: 16px;
+    color: white;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--gold);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== FILOSOFIA SECTION ===== */
+/* Samkhya/Tantra explicado de forma acessível */
+.filosofia {
+    padding: 6rem 2rem;
+    background: var(--off-white);
+}
+
+.filosofia-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.filosofia-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    padding: 2rem;
+    background: white;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.filosofia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.filosofia-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.filosofia-card h3 {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.filosofia-card h3::before {
+    content: '◆';
+    color: var(--gold);
+    margin-right: 0.8rem;
+}
+
+/* ===== AULAS SECTION ===== */
+.aulas {
+    padding: 6rem 2rem;
+    background: white;
+}
+
+.aulas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.aulas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.aula-card {
+    background: var(--off-white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.aula-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(26, 58, 82, 0.15);
+}
+
+.aula-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--navy);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.aula-card h3 {
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.aula-card ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.aula-card li {
+    padding: 0.5rem 0;
+    color: var(--charcoal);
+}
+
+.aula-card li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: bold;
+    margin-right: 0.8rem;
+}
+
+/* ===== DEPOIMENTOS SECTION ===== */
+.depoimentos {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.05), rgba(212, 175, 55, 0.05));
+}
+
+.depoimentos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.depoimento-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.depoimento-card::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.2;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+
+.depoimento-text {
+    font-style: italic;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.depoimento-author {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--navy);
+}
+
+/* ===== CONTATO SECTION ===== */
+.contato {
+    padding: 6rem 2rem;
+    background: var(--navy);
+    color: white;
+    text-align: center;
+}
+
+.contato-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato h2 {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.contato p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contato-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contato-item {
+    text-align: center;
+}
+
+.contato-item strong {
+    display: block;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-sans);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #0F2537;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .timeline,
+    .aulas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filosofia-grid,
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+        /* Simplificado para mobile */
+    }
+}

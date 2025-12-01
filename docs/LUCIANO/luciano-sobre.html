@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | Luciano Giorgetta</title>
+    <meta name="description"
+        content="Conheça a história de Luciano Giorgetta: de skatista a tatuador, e de tatuador a instrutor de Yôga. 13 anos de prática, filosofia Samkhya/Tantra acessível.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1A3A52;
+            --gold: #D4AF37;
+            --off-white: #F8F9FA;
+            --charcoal: #2C3E50;
+            --gray: #6B7280;
+            --font-display: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--charcoal);
+            line-height: 1.7;
+            background: var(--off-white);
+        }
+
+        /* Header igual ao Home */
+        header {
+            background: var(--navy);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(26, 58, 82, 0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Interno */
+        .hero-interno {
+            background: linear-gradient(135deg, var(--navy) 0%, #0F2537 100%);
+            color: white;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .hero-interno h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-interno p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Layout Assimétrico (Humanizado) */
+        .sobre-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        /* Grid quebrado (não simétrico) */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+            align-items: start;
+        }
+
+        .story-section:nth-child(even) {
+            grid-template-columns: 1fr 1.3fr;
+        }
+
+        .story-section:nth-child(even) .story-text {
+            order: 2;
+        }
+
+        .story-section:nth-child(even) .story-visual {
+            order: 1;
+        }
+
+        .story-text h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .story-text h2 .accent {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .story-text blockquote {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--navy);
+            border-left: 4px solid var(--gold);
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .story-visual {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Valores (Cards Offset) */
+        .valores {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .valores-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .valores h2 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .valor-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        /* Offset para criar assimetria */
+        .valor-card:nth-child(2) {
+            transform: translateY(2rem);
+        }
+
+        .valor-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .valor-card h3::before {
+            content: '◆';
+            color: var(--gold);
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Certificações */
+        .certificacoes {
+            background: linear-gradient(135deg, var(--navy), #0F2537);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .certificacoes-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .certificacoes h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .cert-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .cert-item strong {
+            display: block;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #0F2537;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 968px) {
+
+            .story-section,
+            .story-section:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .story-section:nth-child(even) .story-text,
+            .story-section:nth-child(even) .story-visual {
+                order: initial;
+            }
+
+            .valores-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .valor-card:nth-child(2) {
+                transform: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="luciano-home.html" class="logo">Luciano <span>Giorgetta</span></a>
+            <ul class="nav-links">
+                <li><a href="luciano-home.html">Início</a></li>
+                <li><a href="luciano-sobre.html">Sobre</a></li>
+                <li><a href="luciano-home.html#aulas">Aulas</a></li>
+                <li><a href="luciano-home.html#filosofia">Filosofia</a></li>
+                <li><a href="luciano-contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-interno">
+        <h1>Minha História</h1>
+        <p>Do caos da agulha à quietude do asana. Uma jornada de transformação real.</p>
+    </section>
+
+    <div class="sobre-content">
+        <!-- Seção 1: Adolescente -->
+        <div class="story-section">
+            <div class="story-text">
+                <h2>2013: <span class="accent">O Primeiro Contato</span></h2>
+                <p>
+                    Eu tinha 15 anos quando minha mãe insistiu para eu experimentar uma aula de Yôga.
+                    Confesso que fui sem muita empolgação. Mas na primeira aula, algo mudou.
+                </p>
+                <p>
+                    Senti mais energia, mais disposição. Meu rendimento no skate melhorou.
+                    Comecei a dormir melhor, a me sentir mais feliz no dia a dia.
+                </p>
+                <blockquote>
+                    "Foi quando percebi: isso funciona de verdade. Não é papo furado."
+                </blockquote>
+            </div>
+            <div class="story-visual">
+                <p>[Foto: Luciano jovem praticando / skatista]</p>
+            </div>
+        </div>
+
+        <!-- Seção 2: Tatuador -->
+        <div class="story-section">
+            <div class="story-text">
+                <h2>2013-2021: <span class="accent">Tatuador & Praticante</span></h2>
+                <p>
+                    Durante 8 anos, trabalhei como tatuador profissional. Meu estilo era oriental/japonês.
+                    Meu corpo inteiro virou uma tela. Arte, expressão, identidade.
+                </p>
+                <p>
+                    Mas enquanto tatuava, continuei praticando Yôga. A filosofia começou a fazer cada vez mais sentido.
+                    Samkhya, Tantra, a ideia de liberdade, de usar a mente como ferramenta, não como prisão.
+                </p>
+                <p>
+                    Chegou um momento em que tatuar já não fazia mais sentido. Eu queria transmitir o que estava
+                    vivendo:
+                    essa melhora na qualidade de vida, essa energia constante, essa clareza mental.
+                </p>
+            </div>
+            <div class="story-visual">
+                <p>[Foto: Luciano tatuando ou mostrando tatuagens]</p>
+            </div>
+        </div>
+
+        <!-- Seção 3: Instrutor -->
+        <div class="story-section">
+            <div class="story-text">
+                <h2>2021-Hoje: <span class="accent">Instrutor de Yôga</span></h2>
+                <p>
+                    Em 2021, fiz a transição de carreira. Virei instrutor de Yôga.
+                    Hoje sou Nível 3 pela Humana, o nível mais alto de certificação.
+                </p>
+                <p>
+                    Ministro aulas particulares, em grupo, workshops de filosofia.
+                    Já atendi mais de 200 alunos, dei mais de 1000 práticas.
+                </p>
+                <blockquote>
+                    "Meu diferencial? Consigo transmitir filosofia complexa de forma acessível.
+                    Sem misticismo vazio. Para pessoas reais, com vidas reais."
+                </blockquote>
+                <p>
+                    Não sou um guru inalcançável. Sou alguém que já trilhou o caminho e agora ensina o mapa.
+                </p>
+            </div>
+            <div class="story-visual">
+                <p>[Foto: Luciano instruindo / em asana]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Valores -->
+    <section class="valores">
+        <div class="valores-container">
+            <h2>O Que Me Move</h2>
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <h3>Autenticidade</h3>
+                    <p>
+                        Não finjo ser quem não sou. Sou tatuado, gosto de skate, tenho uma história real.
+                        Yôga não é sobre perfeição, é sobre transformação.
+                    </p>
+                </div>
+
+                <div class="valor-card">
+                    <h3>Filosofia Acessível</h3>
+                    <p>
+                        Samkhya e Tantra são profundos, mas não precisam ser complicados.
+                        Traduzo conceitos complexos para uma linguagem que faz sentido.
+                    </p>
+                </div>
+
+                <div class="valor-card">
+                    <h3>Liberdade</h3>
+                    <p>
+                        Yôga é sobre liberdade, não repressão. Sobre usar a mente como ferramenta,
+                        não ser dominado por ela. Sobre viver com energia e clareza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificações -->
+    <section class="certificacoes">
+        <div class="certificacoes-container">
+            <h2>Formação & Certificações</h2>
+            <div class="cert-list">
+                <div class="cert-item">
+                    <strong>Nível 3</strong>
+                    <p>Humana (Certificação Máxima)</p>
+                </div>
+                <div class="cert-item">
+                    <strong>13 anos</strong>
+                    <p>de Prática Contínua</p>
+                </div>
+                <div class="cert-item">
+                    <strong>+20 cursos</strong>
+                    <p>de Filosofia & Técnica</p>
+                </div>
+                <div class="cert-item">
+                    <strong>4 Prana Weekends</strong>
+                    <p>Retiros na Praia do Rosa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Luciano Giorgetta | Instrutor de Yôga | Porto Alegre, RS</p>
+    </footer>
+</body>
+
+</html>

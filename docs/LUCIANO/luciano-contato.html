@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Luciano Giorgetta</title>
+    <meta name="description"
+        content="Entre em contato com Luciano Giorgetta. Agende sua aula experimental de Yôga em Porto Alegre. WhatsApp, e-mail e redes sociais.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1A3A52;
+            --gold: #D4AF37;
+            --off-white: #F8F9FA;
+            --charcoal: #2C3E50;
+            --gray: #6B7280;
+            --font-display: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--charcoal);
+            line-height: 1.7;
+            background: var(--off-white);
+        }
+
+        header {
+            background: var(--navy);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(26, 58, 82, 0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #0F2537 100%);
+            color: white;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Layout Split (Humanizado) */
+        .contato-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contato-info h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .contato-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Cards de Contato (Não Simétricos) */
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateX(8px);
+        }
+
+        .contact-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-card p {
+            color: var(--charcoal);
+            font-size: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* CTA Principal */
+        .cta-box {
+            background: linear-gradient(135deg, var(--navy), #0F2537);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #F4D03F;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Localização */
+        .localizacao {
+            background: white;
+            padding: 5rem 2rem;
+        }
+
+        .localizacao-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .localizacao h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .local-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+
+        .local-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .local-card p {
+            color: var(--charcoal);
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #0F2537;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 968px) {
+            .contato-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                position: static;
+            }
+
+            .local-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="luciano-home.html" class="logo">Luciano <span>Giorgetta</span></a>
+            <ul class="nav-links">
+                <li><a href="luciano-home.html">Início</a></li>
+                <li><a href="luciano-sobre.html">Sobre</a></li>
+                <li><a href="luciano-home.html#aulas">Aulas</a></li>
+                <li><a href="luciano-home.html#filosofia">Filosofia</a></li>
+                <li><a href="luciano-contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Vamos Conversar?</h1>
+        <p>Agende sua aula experimental ou tire suas dúvidas. Respondo pessoalmente.</p>
+    </section>
+
+    <div class="contato-content">
+        <div class="contato-info">
+            <h2>Como Posso Te Ajudar?</h2>
+            <p>
+                Se você está buscando mais energia, clareza mental, ou simplesmente quer entender
+                como o Yôga pode transformar sua qualidade de vida, estou aqui para conversar.
+            </p>
+            <p>
+                Atendo em Porto Alegre (presencial) e online. Aulas particulares, em grupo,
+                ou workshops de filosofia. Escolha o formato que funciona para você.
+            </p>
+
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h3>💬 WhatsApp (Principal)</h3>
+                    <p>
+                        Essa é a forma mais rápida de falar comigo.
+                        Respondo pessoalmente, sem robôs.
+                    </p>
+                    <a href="https://wa.me/5551999999999?text=Olá%20Luciano,%20vim%20pelo%20site!" target="_blank">
+                        Abrir WhatsApp →
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📧 E-mail</h3>
+                    <p>
+                        Para propostas de parcerias, Yôga corporativo ou dúvidas mais detalhadas.
+                    </p>
+                    <a href="mailto:luciano@giorgetta.com.br">
+                        luciano@giorgetta.com.br
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📱 Instagram</h3>
+                    <p>
+                        Acompanhe dicas de prática, filosofia e bastidores das aulas.
+                    </p>
+                    <a href="https://instagram.com/lucianogiorgetta" target="_blank">
+                        @lucianogiorgetta →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Aula Experimental</h3>
+            <p>
+                Experimente uma aula sem compromisso.
+                Vamos conversar sobre seus objetivos e ver se faz sentido para você.
+            </p>
+            <a href="https://wa.me/5551999999999?text=Olá%20Luciano,%20quero%20agendar%20uma%20aula%20experimental!"
+                class="btn">
+                Agendar Agora
+            </a>
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">
+                Presencial em Porto Alegre ou Online
+            </p>
+        </div>
+    </div>
+
+    <section class="localizacao">
+        <div class="localizacao-container">
+            <h2>Onde Atendo</h2>
+            <div class="local-grid">
+                <div class="local-card">
+                    <h3>🏫 Escola Humana Rio Branco</h3>
+                    <p>
+                        <strong>Endereço:</strong> Rua Ramiro Barcelos, 1800<br>
+                        Porto Alegre, RS
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Horários:</strong> Segunda a Sexta<br>
+                        (Consultar horários disponíveis)
+                    </p>
+                </div>
+
+                <div class="local-card">
+                    <h3>🏠 Aulas Particulares</h3>
+                    <p>
+                        <strong>Presencial:</strong> Vou até você em Porto Alegre<br>
+                        (Bairros: Moinhos, Bom Fim, Petrópolis, etc.)
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Online:</strong> De qualquer lugar<br>
+                        (Zoom, Google Meet)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Luciano Giorgetta | Instrutor de Yôga | Porto Alegre, RS</p>
+    </footer>
+</body>
+
+</html>

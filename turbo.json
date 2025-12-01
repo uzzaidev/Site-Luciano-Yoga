@@ -1,0 +1,40 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "tsconfig.json",
+    "tailwind.config.js",
+    "package.json"
+  ],
+  "globalEnv": ["NODE_ENV"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build", "^typecheck"],
+      "outputs": [".next/**", "dist/**", "out/**", ".turbo/**"],
+      "cache": true,
+      "outputLogs": "new-only"
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "outputs": [".eslintcache"],
+      "cache": true,
+      "outputLogs": "errors-only"
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**/*.d.ts"],
+      "cache": true,
+      "outputLogs": "errors-only"
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
