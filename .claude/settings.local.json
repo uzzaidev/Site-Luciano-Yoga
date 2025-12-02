@@ -4,7 +4,11 @@
       "Bash(tree:*)",
       "Bash(dir /S /B)",
       "Bash(findstr:*)",
-      "Bash(if exist .next rmdir /s /q .next)"
+      "Bash(if exist .next rmdir /s /q .next)",
+      "Bash(npm run clean:*)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
