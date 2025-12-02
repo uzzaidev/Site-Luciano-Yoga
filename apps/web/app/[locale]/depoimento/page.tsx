@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { TestimonialForm } from '@/components/TestimonialForm';
+import { locales } from '@/i18n';
 
 type Props = {
   params: Promise<{
@@ -17,6 +18,11 @@ export const metadata: Metadata = {
     follow: false,
   },
 };
+
+// Gerar parâmetros estáticos para todos os locales
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export default async function DepoimentoPage({ params }: Props) {
   const { locale } = await params;

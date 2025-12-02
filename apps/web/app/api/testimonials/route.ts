@@ -2,8 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { siteConfig } from '@/site.config';
 
-// Inicializar Resend (precisa de API key no .env)
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Inicializar Resend apenas se a API key estiver disponível
+// Isso evita erros durante o build
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+};
 
 /**
  * API Route para processar depoimentos
@@ -102,7 +107,8 @@ export async function POST(request: NextRequest) {
 
     // Enviar email usando Resend
     // Nota: Você precisa configurar RESEND_API_KEY no .env
-    if (process.env.RESEND_API_KEY) {
+    const resend = getResend();
+    if (resend) {
       try {
         await resend.emails.send({
           from: 'Site <onboarding@resend.dev>', // Configure seu domínio verificado
