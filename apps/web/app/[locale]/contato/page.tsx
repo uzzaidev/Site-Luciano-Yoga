@@ -113,7 +113,7 @@ export default async function ContatoPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 form-section">
         <div className="mx-auto max-w-3xl px-4 sm:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#0F2537] mb-4">
@@ -123,9 +123,7 @@ export default async function ContatoPage({ params }: Props) {
               Preencha o formulário abaixo e entrarei em contato em breve.
             </p>
           </div>
-          <div className="mx-auto max-w-2xl">
-            <ContactForm />
-          </div>
+          <ContactForm />
         </div>
       </section>
     </>
