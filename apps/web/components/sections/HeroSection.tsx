@@ -48,10 +48,10 @@ export function HeroSection() {
         </div>
         <div className="hero-image">
           <Image
-            src="/images/luciano-hero.png"
+            src="/images/luciano-3-sem-fundo.png"
             alt="Luciano Giorgetta - Instrutor de Yôga"
-            width={500}
-            height={600}
+            width={480}
+            height={576}
             className="object-contain"
             priority
           />

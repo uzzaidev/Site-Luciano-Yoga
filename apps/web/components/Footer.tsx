@@ -13,14 +13,16 @@ export function Footer() {
 
   return (
     <>
-      <footer className="bg-[#0F2537] text-white/70 py-12 text-center">
-        <div className="mx-auto max-w-7xl flex flex-col items-center justify-center gap-2 px-4 sm:px-8">
-          <p className="w-full text-center text-base m-0 leading-tight">
-            © 2025 Luciano Giorgetta | Instrutor de Yôga | Porto Alegre, RS
-          </p>
-          <p className="w-full text-center text-sm italic m-0 leading-tight">
-            Yôga para corpos reais, filosofia para mentes livres.
-          </p>
+      <footer className="bg-[#0F2537] text-white/70 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-8">
+          <div className="flex flex-col items-center justify-center gap-2">
+            <p className="text-center text-base m-0 leading-tight">
+              © 2025 Luciano Giorgetta | Instrutor de Yôga | Porto Alegre, RS
+            </p>
+            <p className="text-center text-sm italic m-0 leading-tight">
+              Yôga para corpos reais, filosofia para mentes livres.
+            </p>
+          </div>
         </div>
       </footer>
 
