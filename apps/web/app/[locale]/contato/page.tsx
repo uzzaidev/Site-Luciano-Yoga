@@ -123,7 +123,9 @@ export default async function ContatoPage({ params }: Props) {
               Preencha o formulário abaixo e entrarei em contato em breve.
             </p>
           </div>
-          <ContactForm />
+          <div className="mx-auto max-w-2xl">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </>
