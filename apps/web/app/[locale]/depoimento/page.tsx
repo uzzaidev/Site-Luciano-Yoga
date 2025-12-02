@@ -45,7 +45,7 @@ export default async function DepoimentoPage({ params }: Props) {
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8 rounded-r">
           <p className="text-sm text-blue-800">
             <strong>Privacidade:</strong> Seu nome será exibido apenas com as iniciais. 
-            Por exemplo, se você se chamar "Pedro Vitor", aparecerá como "Pedro V." no site.
+            Por exemplo, se você se chamar "Luciano Giorgetta", aparecerá como "Luciano G." no site.
           </p>
         </div>
 

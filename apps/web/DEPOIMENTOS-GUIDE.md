@@ -10,7 +10,7 @@ O sistema permite que pessoas escaneiem um QR code e sejam direcionadas para uma
 
 1. **Página Escondida**: `/depoimento` - não aparece em buscas (noindex)
 2. **Formulário Completo**: Nome, depoimento e foto opcional
-3. **Privacidade**: Nome exibido apenas com iniciais (ex: "Pedro V." ao invés de "Pedro Vitor")
+3. **Privacidade**: Nome exibido apenas com iniciais (ex: "Luciano G." ao invés de "Luciano Giorgetta")
 4. **Upload de Foto**: Formato circular, estilo WhatsApp (opcional)
 5. **Envio por Email**: Depoimentos são enviados para o email configurado
 6. **QR Code**: Gerador de QR code para facilitar acesso

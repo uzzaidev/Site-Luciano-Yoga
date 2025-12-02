@@ -28,7 +28,7 @@ export function TestimonialForm() {
 
   /**
    * Processa o nome para exibir apenas com iniciais
-   * Ex: "Pedro Vitor" -> "Pedro V."
+   * Ex: "Luciano Giorgetta" -> "Luciano G."
    */
   const formatNameForDisplay = (fullName: string): string => {
     const parts = fullName.trim().split(/\s+/);
@@ -162,7 +162,7 @@ export function TestimonialForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 outline-none transition-all"
-            placeholder="Ex: Pedro Vitor"
+            placeholder="Ex: Luciano Giorgetta"
           />
           <p className="mt-1 text-xs text-gray-500">
             Será exibido como: <strong>{formData.name ? formatNameForDisplay(formData.name) : '...'}</strong>
