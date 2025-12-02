@@ -21,7 +21,7 @@ export default async function ContatoPage({ params }: Props) {
         <p>Agende sua aula experimental ou tire suas dúvidas. Respondo pessoalmente.</p>
       </section>
 
-      <div className="contato-content">
+      <div className="contato-page-grid">
         <div className="contato-info">
           <h2>Como Posso Te Ajudar?</h2>
           <p>
@@ -114,7 +114,7 @@ export default async function ContatoPage({ params }: Props) {
       </section>
 
       <section className="bg-white py-16 form-section">
-        <div className="mx-auto max-w-3xl px-4 sm:px-8">
+        <div className="mx-auto max-w-2xl px-4 sm:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#0F2537] mb-4">
               Envie Sua Mensagem

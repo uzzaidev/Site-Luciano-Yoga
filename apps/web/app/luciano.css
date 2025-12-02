@@ -15,12 +15,9 @@
     --font-body: 'Inter', sans-serif;
 }
 
-body {
-    font-family: var(--font-body);
-    color: var(--charcoal);
-    line-height: 1.7;
-    background: var(--off-white);
-}
+/* Body removido - configurado via Tailwind no layout.tsx */
+/* Estilos movidos para layout.tsx para usar design tokens e evitar conflitos */
+/* Se necessário, adicionar estilos específicos via classes Tailwind no body */
 
 /* ===== HEADER & NAVEGAÇÃO ===== */
 header {
@@ -829,7 +826,8 @@ nav {
 }
 
 /* ===== PÁGINA CONTATO ===== */
-.contato-content {
+/* Renomeado para .contato-page-grid para evitar conflitos com outras páginas */
+.contato-page-grid {
     max-width: 1200px;
     margin: 0 auto;
     padding: 6rem 2rem;
@@ -1188,7 +1186,7 @@ body:has(.blog-post) header {
         transform: none;
     }
 
-    .contato-content {
+    .contato-page-grid {
         grid-template-columns: 1fr;
     }
 

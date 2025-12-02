@@ -12,11 +12,9 @@
 /* BASE STYLES */
 /* ============================================ */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset removido - Tailwind já faz isso com @import "tailwindcss" */
+/* Tailwind Preflight já inclui: margin: 0, padding: 0, box-sizing: border-box */
+/* Remover nosso reset evita conflitos com classes Tailwind como mx-auto, px-4, etc */
 
 html {
   scroll-behavior: smooth;

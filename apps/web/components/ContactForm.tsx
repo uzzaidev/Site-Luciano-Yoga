@@ -39,7 +39,7 @@ export function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-6" style={{ width: '100%', maxWidth: '672px', margin: '0 auto' }}>
+        <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-2xl mx-auto">
             <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Nome Completo *
