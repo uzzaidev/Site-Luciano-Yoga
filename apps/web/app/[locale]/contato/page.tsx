@@ -1,5 +1,6 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { siteConfig } from '@/site.config';
+import { ContactForm } from '@/components/ContactForm';
 
 type Props = {
   params: Promise<{
@@ -109,6 +110,20 @@ export default async function ContatoPage({ params }: Props) {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#0F2537] mb-4">
+              Envie Sua Mensagem
+            </h2>
+            <p className="text-gray-600">
+              Preencha o formulário abaixo e entrarei em contato em breve.
+            </p>
+          </div>
+          <ContactForm />
         </div>
       </section>
     </>
