@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <>
-      <footer className="bg-[#0F2537] text-white/70 py-16 w-full">
+      <footer className="bg-[#0F2537] text-white/70 py-20 w-full">
         <div className="w-full px-4 sm:px-8">
           <div className="flex flex-col items-center justify-center gap-2 w-full">
             <p className="text-center text-base m-0 leading-tight w-full" style={{ textAlign: 'center' }}>
