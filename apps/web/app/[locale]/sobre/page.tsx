@@ -98,7 +98,14 @@ export default async function SobrePage({ params }: Props) {
             </p>
           </div>
           <div className="story-visual">
-            <p>[Foto: Luciano instruindo / em asana]</p>
+            <div className="bg-white p-8 rounded-2xl shadow-lg min-h-[300px] flex items-center justify-center text-gray-500 italic relative overflow-hidden w-full h-full">
+              <Image
+                src="/images/Luciano_2_sem_fundo.png"
+                alt="Luciano instruindo / em asana"
+                fill
+                className="object-contain p-4"
+              />
+            </div>
           </div>
         </div>
       </div>

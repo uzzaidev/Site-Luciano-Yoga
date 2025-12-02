@@ -37,21 +37,23 @@ export function HeroSection() {
           </p>
           <div className="cta-group">
             <Link href={hero.cta.primary.href} className="btn btn-primary">
-              {hero.cta.primary.text}
+              <span className="block">Agendar Aula</span>
+              <span className="block">Experimental</span>
             </Link>
             {hero.cta.secondary.href && hero.cta.secondary.text && (
               <Link href={hero.cta.secondary.href} className="btn btn-secondary">
-                {hero.cta.secondary.text}
+                <span className="block">Conhecer a</span>
+                <span className="block">Filosofia</span>
               </Link>
             )}
           </div>
         </div>
         <div className="hero-image">
           <Image
-            src="/images/luciano-3-sem-fundo.png"
+            src="/images/Luciano_2_sem_fundo_menor.png"
             alt="Luciano Giorgetta - Instrutor de Yôga"
-            width={480}
-            height={576}
+            width={510}
+            height={680}
             className="object-contain"
             priority
           />
