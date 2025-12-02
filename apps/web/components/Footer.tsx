@@ -13,13 +13,13 @@ export function Footer() {
 
   return (
     <>
-      <footer className="bg-[#0F2537] text-white/70 py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-8">
-          <div className="flex flex-col items-center justify-center gap-2">
-            <p className="text-center text-base m-0 leading-tight">
+      <footer className="bg-[#0F2537] text-white/70 py-16 w-full">
+        <div className="w-full px-4 sm:px-8">
+          <div className="flex flex-col items-center justify-center gap-2 w-full">
+            <p className="text-center text-base m-0 leading-tight w-full" style={{ textAlign: 'center' }}>
               © 2025 Luciano Giorgetta | Instrutor de Yôga | Porto Alegre, RS
             </p>
-            <p className="text-center text-sm italic m-0 leading-tight">
+            <p className="text-center text-sm italic m-0 leading-tight w-full" style={{ textAlign: 'center' }}>
               Yôga para corpos reais, filosofia para mentes livres.
             </p>
           </div>
