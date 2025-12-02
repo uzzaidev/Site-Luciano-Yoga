@@ -73,32 +73,25 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary to-[#0F2537] text-white pt-20 pb-12 px-8 text-center">
-        <h1 className="font-display text-[3.5rem] mb-4">Blog</h1>
-        <p className="text-[1.3rem] text-white/90 max-w-[700px] mx-auto">
-          Filosofia, prática e qualidade de vida. Sem misticismo vazio.
-        </p>
+      <section className="hero-interno">
+        <h1>Blog</h1>
+        <p>Filosofia, prática e qualidade de vida. Sem misticismo vazio.</p>
       </section>
 
-      <div className="max-w-[1200px] mx-auto py-24 px-8">
-        <div className="flex justify-center gap-6 mb-16 flex-wrap">
-          <button className="px-8 py-[0.8rem] bg-white border-2 border-primary text-primary rounded-lg font-sans font-semibold transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white">
-            Todos
-          </button>
+      <div className="blog-content">
+        <div className="filters">
+          <button className="filter-btn active">Todos</button>
           {siteConfig.blog.categories.map((category) => (
-            <button key={category.slug} className="px-8 py-[0.8rem] bg-white border-2 border-primary text-primary rounded-lg font-sans font-semibold transition-all hover:bg-primary hover:text-white active:bg-primary active:text-white">
+            <button key={category.slug} className="filter-btn">
               {category.name}
             </button>
           ))}
         </div>
 
-        <div className="grid gap-10" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))' }}>
+        <div className="blog-grid">
           {blogPosts.map((post) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col"
-            >
-              <div className="bg-primary h-[200px] flex items-center justify-center text-white/50 italic relative">
+            <article key={post.id} className="blog-card">
+              <div className="blog-card-image">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -106,17 +99,13 @@ export default async function BlogPage({ params }: Props) {
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 flex flex-col flex-1">
-                <span className="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-sans font-semibold mb-4 self-start">
-                  {post.category}
-                </span>
-                <h2 className="font-display text-[1.8rem] text-primary mb-4 leading-tight">
-                  {post.title}
-                </h2>
-                <p className="text-text mb-6 flex-1">{post.excerpt}</p>
-                <div className="flex justify-between items-center pt-4 border-t border-gray-200 text-sm text-gray-500">
+              <div className="blog-card-content">
+                <span className="blog-category">{post.category}</span>
+                <h2>{post.title}</h2>
+                <p>{post.excerpt}</p>
+                <div className="blog-meta">
                   <span>{post.readingTime}</span>
-                  <Link href={`/blog/${post.slug}`} className="text-accent font-sans font-semibold hover:text-primary">
+                  <Link href={`/blog/${post.slug}`} className="read-more">
                     Ler artigo →
                   </Link>
                 </div>

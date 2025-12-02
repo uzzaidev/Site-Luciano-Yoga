@@ -45,7 +45,7 @@ export const siteConfig = {
     address: {
       hasPhysicalAddress: true,
       street: "Rua Ramiro Barcelos, 1800",
-      complement: "Escola Humana Rio Branco",
+      complement: "Escola Umana Rio Branco",
       neighborhood: "",
       city: "Porto Alegre",
       state: "RS",
@@ -198,7 +198,7 @@ export const siteConfig = {
       id: "aulas-grupo",
       icon: "👥",
       title: "Aulas em Grupo",
-      description: "Na Escola Humana Rio Branco (Ramiro 1800).",
+      description: "Na Escola Umana Rio Branco (Ramiro 1800).",
       features: [
         "Segunda a sexta",
         "Turmas regulares",
@@ -260,7 +260,7 @@ export const siteConfig = {
       {
         name: "Mayra M.",
         role: "Aluna",
-        company: "Escola Humana",
+        company: "Escola Umana",
         text: "O Luciano tem um dom para explicar filosofia de um jeito que faz sentido. Não é aquele papo esotérico que a gente não entende. É prático, é real, e funciona no dia a dia.",
         avatar: "",
         rating: 5,

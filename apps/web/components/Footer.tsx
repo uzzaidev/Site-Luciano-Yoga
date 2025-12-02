@@ -12,16 +12,29 @@ export function Footer() {
   );
 
   return (
-    <footer className="bg-[#0F2537] text-white/70">
-      <div className="mx-auto max-w-7xl flex flex-col gap-6 px-4 py-12 sm:px-8 text-center">
-        <p className="text-base">
-          © {new Date().getFullYear()} {siteConfig.identity.name || 'Template Skeleton'} | Instrutor de Yôga | Porto Alegre, RS
-        </p>
-        <p className="text-sm italic">
-          {siteConfig.identity.tagline}
-        </p>
+    <>
+      <footer className="bg-[#0F2537] text-white/70 py-12 text-center">
+        <div className="mx-auto max-w-7xl flex flex-col items-center justify-center gap-2 px-4 sm:px-8">
+          <p className="w-full text-center text-base m-0 leading-tight">
+            © 2025 Luciano Giorgetta | Instrutor de Yôga | Porto Alegre, RS
+          </p>
+          <p className="w-full text-center text-sm italic m-0 leading-tight">
+            Yôga para corpos reais, filosofia para mentes livres.
+          </p>
+        </div>
+      </footer>
+
+      <div className="bg-black py-4 px-8 text-center">
+        <a
+          href="https://uzzai.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white no-underline font-sans text-sm font-semibold tracking-wide transition-colors duration-300 hover:text-[#D4AF37]"
+        >
+          FEITO COM MUITO AMOR E PRÁNA POR Uzz.Ai 💚
+        </a>
       </div>
-    </footer>
+    </>
   );
 }
 

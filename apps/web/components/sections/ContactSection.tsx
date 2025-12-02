@@ -30,7 +30,9 @@ export function ContactSection() {
           {contact.email.primary && (
             <div className="contato-item">
               <strong>📧 E-mail</strong>
-              <p>{contact.email.primary}</p>
+              <Link href={`mailto:${contact.email.primary}`} className="contato-cta">
+                {contact.email.primary}
+              </Link>
             </div>
           )}
           {contact.address.hasPhysicalAddress && (
@@ -42,7 +44,9 @@ export function ContactSection() {
           {siteConfig.social.instagram && (
             <div className="contato-item">
               <strong>📱 Instagram</strong>
-              <p>@lucianogiorgetta</p>
+              <Link href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="contato-cta">
+                @lucianogiorgetta
+              </Link>
             </div>
           )}
         </div>

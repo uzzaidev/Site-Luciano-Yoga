@@ -1,4 +1,5 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { siteConfig } from '@/site.config';
 
 type Props = {
@@ -14,129 +15,145 @@ export default async function SobrePage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary to-[#0F2537] text-white pt-20 pb-12 px-8 text-center">
-        <h1 className="font-display text-[3.5rem] mb-4">Minha História</h1>
-        <p className="text-[1.3rem] text-white/90 max-w-[700px] mx-auto">
-          Do caos da agulha à quietude do asana. Uma jornada de transformação real.
-        </p>
+      <section className="hero-interno">
+        <h1>Minha História</h1>
+        <p>Do caos da agulha à quietude do asana. Uma jornada de transformação real.</p>
       </section>
 
-      <div className="max-w-[1200px] mx-auto py-24 px-8">
+      <div className="sobre-content">
         {/* Seção 1: Adolescente */}
-        <div className="grid md:grid-cols-[1.3fr_1fr] gap-16 mb-20 items-start">
-          <div className="space-y-6">
-            <h2 className="font-display text-[2.5rem] text-primary leading-tight">
-              2013: <span className="text-accent italic">O Primeiro Contato</span>
-            </h2>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+        <div className="story-section">
+          <div className="story-text">
+            <h2>2013: <span className="accent">O Primeiro Contato</span></h2>
+            <p>
               Eu tinha 15 anos quando minha mãe insistiu para eu experimentar uma aula de Yôga.
               Confesso que fui sem muita empolgação. Mas na primeira aula, algo mudou.
             </p>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+            <p>
               Senti mais energia, mais disposição. Meu rendimento no skate melhorou.
               Comecei a dormir melhor, a me sentir mais feliz no dia a dia.
             </p>
-            <blockquote className="font-display italic text-[1.3rem] text-primary border-l-4 border-accent pl-8 my-8 leading-normal">
+            <blockquote>
               "Foi quando percebi: isso funciona de verdade. Não é papo furado."
             </blockquote>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg min-h-[300px] flex items-center justify-center text-gray-500 italic">
-            <p>[Foto: Luciano jovem praticando / skatista]</p>
+          <div className="bg-white p-8 rounded-2xl shadow-lg min-h-[300px] flex items-center justify-center text-gray-500 italic relative overflow-hidden">
+            <Image
+              src="/images/luciano-sem-fundo-1.png"
+              alt="Luciano jovem praticando"
+              fill
+              className="object-contain p-4"
+            />
           </div>
         </div>
 
         {/* Seção 2: Tatuador */}
-        <div className="grid md:grid-cols-[1fr_1.3fr] gap-16 mb-20 items-start">
-          <div className="md:order-2 space-y-6">
-            <h2 className="font-display text-[2.5rem] text-primary leading-tight">
-              2013-2021: <span className="text-accent italic">Tatuador & Praticante</span>
-            </h2>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+        <div className="story-section">
+          <div className="story-text">
+            <h2>2013-2021: <span className="accent">Tatuador & Praticante</span></h2>
+            <p>
               Durante 8 anos, trabalhei como tatuador profissional. Meu estilo era oriental/japonês.
               Meu corpo inteiro virou uma tela. Arte, expressão, identidade.
             </p>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+            <p>
               Mas enquanto tatuava, continuei praticando Yôga. A filosofia começou a fazer cada vez mais sentido.
               Samkhya, Tantra, a ideia de liberdade, de usar a mente como ferramenta, não como prisão.
             </p>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+            <p>
               Chegou um momento em que tatuar já não fazia mais sentido. Eu queria transmitir o que estava
               vivendo:
               essa melhora na qualidade de vida, essa energia constante, essa clareza mental.
             </p>
           </div>
-          <div className="md:order-1 bg-white p-8 rounded-2xl shadow-lg min-h-[300px] flex items-center justify-center text-gray-500 italic">
-            <p>[Foto: Luciano tatuando ou mostrando tatuagens]</p>
+          <div className="story-visual">
+            <div className="bg-white p-8 rounded-2xl shadow-lg min-h-[300px] flex items-center justify-center text-gray-500 italic relative overflow-hidden w-full h-full">
+              <Image
+                src="/images/luciano-3-sem-fundo.png"
+                alt="Luciano tatuador"
+                fill
+                className="object-contain p-4"
+              />
+            </div>
           </div>
         </div>
 
         {/* Seção 3: Instrutor */}
-        <div className="grid md:grid-cols-[1.3fr_1fr] gap-16 mb-20 items-start">
-          <div className="space-y-6">
-            <h2 className="font-display text-[2.5rem] text-primary leading-tight">
-              2021-Hoje: <span className="text-accent italic">Instrutor de Yôga</span>
-            </h2>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+        <div className="story-section">
+          <div className="story-text">
+            <h2>2021-Hoje: <span className="accent">Instrutor de Yôga</span></h2>
+            <p>
               Em 2021, fiz a transição de carreira. Virei instrutor de Yôga.
               Hoje sou Nível 3 pela Humana, o nível mais alto de certificação.
             </p>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+            <p>
               Ministro aulas particulares, em grupo, workshops de filosofia.
               Já atendi mais de 200 alunos, dei mais de 1000 práticas.
             </p>
-            <blockquote className="font-display italic text-[1.3rem] text-primary border-l-4 border-accent pl-8 my-8 leading-normal">
+            <blockquote>
               "Meu diferencial? Consigo transmitir filosofia complexa de forma acessível.
               Sem misticismo vazio. Para pessoas reais, com vidas reais."
             </blockquote>
-            <p className="text-[1.1rem] leading-relaxed text-text-secondary">
+            <p>
               Não sou um guru inalcançável. Sou alguém que já trilhou o caminho e agora ensina o mapa.
             </p>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg min-h-[300px] flex items-center justify-center text-gray-500 italic">
+          <div className="story-visual">
             <p>[Foto: Luciano instruindo / em asana]</p>
           </div>
         </div>
       </div>
 
       {/* Valores */}
-      <section className="bg-white py-20 px-8">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="font-display text-[2.8rem] text-primary text-center mb-16">O Que Me Move</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {about.values.map((value, index) => (
-              <div
-                key={index}
-                className={`bg-bg-secondary p-10 rounded-xl ${index === 1 ? 'md:translate-y-8' : ''}`}
-              >
-                <h3 className="font-sans text-[1.5rem] text-primary mb-4 before:content-['◆'] before:text-accent before:mr-3">
-                  {value.title}
-                </h3>
-                <p className="text-text">{value.description}</p>
-              </div>
-            ))}
+      <section className="valores">
+        <div className="valores-container">
+          <h2>O Que Me Move</h2>
+          <div className="valores-grid">
+            <div className="valor-card">
+              <h3>Autenticidade</h3>
+              <p>
+                Não finjo ser quem não sou. Sou tatuado, gosto de skate, tenho uma história real.
+                Yôga não é sobre perfeição, é sobre transformação.
+              </p>
+            </div>
+
+            <div className="valor-card">
+              <h3>Filosofia Acessível</h3>
+              <p>
+                Samkhya e Tantra são profundos, mas não precisam ser complicados.
+                Traduzo conceitos complexos para uma linguagem que faz sentido.
+              </p>
+            </div>
+
+            <div className="valor-card">
+              <h3>Liberdade</h3>
+              <p>
+                Yôga é sobre liberdade, não repressão. Sobre usar a mente como ferramenta,
+                não ser dominado por ela. Sobre viver com energia e clareza.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Certificações */}
-      <section className="bg-gradient-to-br from-primary to-[#0F2537] text-white py-20 px-8">
-        <div className="max-w-[1000px] mx-auto text-center">
-          <h2 className="font-display text-[2.5rem] mb-12">Formação & Certificações</h2>
-          <div className="flex justify-center gap-12 flex-wrap">
-            <div className="bg-white/10 py-8 px-12 rounded-xl border-2 border-accent/30">
-              <strong className="block text-[2rem] text-accent mb-2">Nível 3</strong>
+      <section className="certificacoes">
+        <div className="certificacoes-container">
+          <h2>Formação & Certificações</h2>
+          <div className="cert-list">
+            <div className="cert-item">
+              <strong>Nível 3</strong>
               <p>Humana (Certificação Máxima)</p>
             </div>
-            <div className="bg-white/10 py-8 px-12 rounded-xl border-2 border-accent/30">
-              <strong className="block text-[2rem] text-accent mb-2">13 anos</strong>
+            <div className="cert-item">
+              <strong>13 anos</strong>
               <p>de Prática Contínua</p>
             </div>
-            <div className="bg-white/10 py-8 px-12 rounded-xl border-2 border-accent/30">
-              <strong className="block text-[2rem] text-accent mb-2">+20 cursos</strong>
+            <div className="cert-item">
+              <strong>+20 cursos</strong>
               <p>de Filosofia & Técnica</p>
             </div>
-            <div className="bg-white/10 py-8 px-12 rounded-xl border-2 border-accent/30">
-              <strong className="block text-[2rem] text-accent mb-2">4 Prana Weekends</strong>
+            <div className="cert-item">
+              <strong>4 Prana Weekends</strong>
               <p>Retiros na Praia do Rosa</p>
             </div>
           </div>
