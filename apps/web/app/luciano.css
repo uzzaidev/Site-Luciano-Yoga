@@ -574,30 +574,35 @@ nav {
 .contato-container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem; /* Padding lateral para mobile */
 }
 
 .contato h2 {
     font-family: var(--font-display);
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Responsivo mobile-first */
     margin-bottom: 1.5rem;
 }
 
 .contato p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Responsivo mobile-first */
     margin-bottom: 3rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Contato info específico para a HOME PAGE */
+/* Contato info específico para a HOME PAGE - MOBILE-FIRST */
 .contato .contato-info {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
+    flex-direction: column; /* Mobile: empilha verticalmente */
+    align-items: center;
+    gap: 2rem; /* Gap menor em mobile */
     margin-top: 3rem;
+    width: 100%;
 }
 
 .contato .contato-item {
     text-align: center;
+    width: 100%; /* Full width em mobile */
+    max-width: 100%; /* Evita overflow */
 }
 
 .contato .contato-item strong {
@@ -605,6 +610,14 @@ nav {
     color: var(--gold);
     margin-bottom: 0.5rem;
     font-family: var(--font-sans);
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem); /* Responsivo */
+}
+
+.contato .contato-item p,
+.contato .contato-item a {
+    word-break: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Quebra URLs longas */
+    max-width: 100%; /* Evita overflow */
 }
 
 .contato-cta {
@@ -612,11 +625,9 @@ nav {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-}
-
-.contato-cta:hover {
-    color: #F4D03F;
-    text-decoration: underline;
+    display: inline-block; /* Permite quebra de linha */
+    word-break: break-word; /* Quebra URLs longas */
+    overflow-wrap: break-word;
 }
 
 /* ===== FOOTER ===== */
@@ -1274,6 +1285,24 @@ body:has(.blog-post) header {
     .section-subtitle {
         margin-bottom: 3rem;
     }
+
+    /* Contato: pode começar horizontal com flex-wrap */
+    .contato .contato-info {
+        flex-direction: row; /* Horizontal em landscape */
+        flex-wrap: wrap; /* Permite quebra de linha se necessário */
+        justify-content: center;
+        gap: 2rem; /* Gap médio */
+    }
+
+    .contato .contato-item {
+        width: auto; /* Não full width */
+        min-width: 150px; /* Largura mínima */
+        flex: 0 1 auto; /* Flex grow/shrink */
+    }
+
+    .contato-container {
+        padding: 0 1.5rem; /* Mais padding lateral */
+    }
 }
 
 /* Tablet (768px+) */
@@ -1345,6 +1374,22 @@ body:has(.blog-post) header {
     .depoimentos {
         padding: 5rem 2rem;
     }
+
+    /* Contato: layout horizontal em tablet */
+    .contato .contato-info {
+        flex-direction: row; /* Horizontal */
+        flex-wrap: nowrap; /* Não quebra linha */
+        gap: 2.5rem; /* Gap maior */
+    }
+
+    .contato .contato-item {
+        flex: 1; /* Distribui espaço igualmente */
+        min-width: 0; /* Permite shrink */
+    }
+
+    .contato-container {
+        padding: 0 2rem; /* Padding tablet */
+    }
 }
 
 /* Desktop (1024px+) */
@@ -1397,6 +1442,15 @@ body:has(.blog-post) header {
     .depoimentos {
         padding: 6rem 2rem;
     }
+
+    /* Contato: layout desktop original */
+    .contato .contato-info {
+        gap: 3rem; /* Gap desktop original */
+    }
+
+    .contato-container {
+        padding: 0; /* Remove padding lateral em desktop (max-width já centraliza) */
+    }
 }
 
 /* Mobile Pequeno (< 480px) - Ajustes específicos */
@@ -1407,6 +1461,15 @@ body:has(.blog-post) header {
 
     .hero-image {
         min-height: 250px; /* Reduz altura mínima */
+    }
+
+    /* Contato: padding extra em telas muito pequenas */
+    .contato-container {
+        padding: 0 1rem; /* Padding mínimo */
+    }
+
+    .contato .contato-info {
+        gap: 1.5rem; /* Gap menor em telas muito pequenas */
     }
 }
 
