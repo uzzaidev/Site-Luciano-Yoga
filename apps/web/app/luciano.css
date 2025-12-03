@@ -69,6 +69,108 @@ nav {
     color: var(--gold);
 }
 
+/* ===== MENU HAMBÚRGUER MOBILE ===== */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 101;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger-line.open:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-line.open:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Botão CTA Desktop - esconder em mobile */
+.btn-cta-desktop {
+    display: block;
+}
+
+/* Overlay do menu mobile */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    display: none;
+}
+
+/* Menu Mobile */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--navy);
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 5rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mobile-nav-links a {
+    color: var(--off-white);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-links a:hover {
+    color: var(--gold);
+}
+
+.mobile-cta {
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+}
+
 /* ===== HERO SECTION ===== */
 /* Inspirado no briefing: "Energia que não acaba. Clareza que transforma." */
 .hero {
@@ -1167,6 +1269,25 @@ body:has(.blog-post) header {
     .nav-links {
         display: none;
         /* Simplificado para mobile */
+    }
+
+    /* Mostrar hambúrguer em mobile */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Esconder botão CTA desktop em mobile */
+    .btn-cta-desktop {
+        display: none;
+    }
+
+    /* Mostrar menu mobile e overlay */
+    .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu-overlay {
+        display: block;
     }
 
     .story-section,
