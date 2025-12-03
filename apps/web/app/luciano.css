@@ -32,7 +32,7 @@ header {
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 clamp(1rem, 2vw, 2rem); /* Mobile 1rem → Desktop 2rem */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@ nav {
 
 .logo {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Mobile 19px → Desktop 29px */
     font-weight: 700;
     color: white;
     text-decoration: none;
@@ -176,7 +176,7 @@ nav {
 .hero {
     background: linear-gradient(135deg, var(--navy) 0%, #0F2537 100%);
     color: white;
-    padding: 8rem 2rem 6rem;
+    padding: 3rem 1rem 2rem; /* Mobile first */
     position: relative;
     overflow: hidden;
 }
@@ -199,14 +199,14 @@ nav {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr; /* Mobile first */
+    gap: 2rem;
     align-items: center;
 }
 
 .hero-text h1 {
     font-family: var(--font-display);
-    font-size: 3.5rem;
+    font-size: clamp(1.75rem, 5vw + 1rem, 3.5rem); /* Mobile 28px → Desktop 56px */
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
@@ -219,7 +219,7 @@ nav {
 }
 
 .hero-text .subtitle {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.3rem); /* Mobile 16px → Desktop 21px */
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -228,20 +228,22 @@ nav {
 .hero-text .tagline {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.5vw + 0.5rem, 1.1rem); /* Mobile 15px → Desktop 18px */
     color: var(--gold);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem; /* Reduzido em mobile */
     border-left: 3px solid var(--gold);
     padding-left: 1.5rem;
 }
 
 .cta-group {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column; /* Mobile: botões empilhados */
+    gap: 1rem; /* Reduzido em mobile */
+    width: 100%;
 }
 
 .btn {
-    padding: 1.2rem 2.5rem;
+    padding: 1rem 1.5rem; /* Mobile: menor padding */
     border-radius: 8px;
     font-family: var(--font-sans);
     font-weight: 600;
@@ -250,6 +252,8 @@ nav {
     transition: all 0.3s ease;
     display: inline-block;
     text-align: center;
+    min-height: 48px; /* Touch target mínimo */
+    width: 100%; /* Mobile: full width */
 }
 
 .btn-primary {
@@ -282,7 +286,7 @@ nav {
     /* padding: 2rem; Removed box */
     /* border: 2px solid rgba(212, 175, 55, 0.2); Removed box */
     text-align: center;
-    min-height: 400px;
+    min-height: 250px; /* Mobile: menor altura */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -296,7 +300,7 @@ nav {
 /* ===== SOBRE SECTION ===== */
 /* História: Skatista → Tatuador → Instrutor */
 .sobre {
-    padding: 6rem 2rem;
+    padding: 3rem 1rem; /* Mobile: menos padding */
     background: white;
 }
 
@@ -307,7 +311,7 @@ nav {
 
 .section-title {
     font-family: var(--font-display);
-    font-size: 2.8rem;
+    font-size: clamp(1.75rem, 4vw + 0.8rem, 2.8rem); /* Mobile 28px → Desktop 45px */
     color: var(--navy);
     margin-bottom: 1rem;
     text-align: center;
@@ -316,15 +320,15 @@ nav {
 .section-subtitle {
     text-align: center;
     color: var(--gray);
-    font-size: 1.2rem;
-    margin-bottom: 4rem;
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.2rem); /* Mobile 16px → Desktop 19px */
+    margin-bottom: 2rem; /* Mobile: menos espaço */
 }
 
 .timeline {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin-bottom: 4rem;
+    grid-template-columns: 1fr; /* Mobile first: 1 coluna */
+    gap: 2rem; /* Mobile: menos gap */
+    margin-bottom: 3rem; /* Mobile: menos espaço */
 }
 
 .timeline-item {
@@ -341,14 +345,14 @@ nav {
 
 .timeline-year {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Mobile 24px → Desktop 32px */
     color: var(--gold);
     margin-bottom: 0.5rem;
 }
 
 .timeline-title {
     font-family: var(--font-sans);
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem); /* Mobile 18px → Desktop 21px */
     color: var(--navy);
     margin-bottom: 1rem;
     font-weight: 600;
@@ -362,10 +366,10 @@ nav {
 /* Stats inspiradas no briefing */
 .stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr; /* Mobile first: 1 coluna */
+    gap: 1.5rem; /* Mobile: menos gap */
     background: linear-gradient(135deg, var(--navy), #0F2537);
-    padding: 3rem;
+    padding: 2rem 1.5rem; /* Mobile: menos padding */
     border-radius: 16px;
     color: white;
 }
@@ -376,7 +380,7 @@ nav {
 
 .stat-number {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw + 1rem, 3rem); /* Mobile 32px → Desktop 48px */
     color: var(--gold);
     font-weight: 700;
     display: block;
@@ -391,7 +395,7 @@ nav {
 /* ===== FILOSOFIA SECTION ===== */
 /* Samkhya/Tantra explicado de forma acessível */
 .filosofia {
-    padding: 6rem 2rem;
+    padding: 3rem 1rem; /* Mobile: menos padding */
     background: var(--off-white);
 }
 
@@ -403,12 +407,12 @@ nav {
 .filosofia-quote {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 2.5vw + 0.5rem, 1.8rem); /* Mobile 19px → Desktop 29px */
     color: var(--navy);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem; /* Mobile: menos espaço */
     line-height: 1.5;
-    padding: 2rem;
+    padding: 1.5rem; /* Mobile: menos padding */
     background: white;
     border-left: 4px solid var(--gold);
     border-radius: 8px;
@@ -416,8 +420,8 @@ nav {
 
 .filosofia-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr; /* Mobile first: 1 coluna */
+    gap: 2rem; /* Mobile: menos gap */
 }
 
 .filosofia-card {
@@ -442,7 +446,7 @@ nav {
 
 /* ===== AULAS SECTION ===== */
 .aulas {
-    padding: 6rem 2rem;
+    padding: 3rem 1rem; /* Mobile: menos padding */
     background: white;
 }
 
@@ -453,8 +457,8 @@ nav {
 
 .aulas-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: 1fr; /* Mobile first: 1 coluna */
+    gap: 2rem; /* Mobile: menos gap */
 }
 
 .aula-card {
@@ -473,15 +477,15 @@ nav {
 }
 
 .aula-icon {
-    width: 80px;
-    height: 80px;
+    width: clamp(60px, 10vw, 80px); /* Mobile 60px → Desktop 80px */
+    height: clamp(60px, 10vw, 80px);
     background: var(--navy);
     border-radius: 50%;
     margin: 0 auto 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Mobile 24px → Desktop 32px */
 }
 
 .aula-card h3 {
@@ -511,7 +515,7 @@ nav {
 
 /* ===== DEPOIMENTOS SECTION ===== */
 .depoimentos {
-    padding: 6rem 2rem;
+    padding: 3rem 1rem; /* Mobile: menos padding */
     background: linear-gradient(135deg, rgba(26, 58, 82, 0.05), rgba(212, 175, 55, 0.05));
 }
 
@@ -522,8 +526,8 @@ nav {
 
 .depoimentos-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    grid-template-columns: 1fr; /* Mobile first: 1 coluna */
+    gap: 2rem; /* Mobile: menos gap */
 }
 
 .depoimento-card {
@@ -1122,7 +1126,7 @@ body:has(.blog-post) header {
 
 .blog-post-header h1 {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: clamp(1.75rem, 4vw + 1rem, 3rem); /* Mobile 28px → Desktop 48px */
     line-height: 1.2;
     margin-bottom: 1rem;
 }
@@ -1238,33 +1242,178 @@ body:has(.blog-post) header {
 }
 
 /* ===== RESPONSIVO ===== */
-@media (max-width: 968px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
 
-    .hero-text h1 {
-        font-size: 2.5rem;
+/* Mobile Landscape (480px+) */
+@media (min-width: 480px) {
+    .hero {
+        padding: 4rem 1.5rem 3rem;
     }
 
     .cta-group {
-        justify-content: center;
+        flex-direction: row; /* Botões lado a lado */
+        width: auto;
+        gap: 1.5rem;
     }
 
-    .timeline,
-    .aulas-grid {
-        grid-template-columns: 1fr;
+    .btn {
+        width: auto; /* Não full width */
+        padding: 1.1rem 2rem;
     }
 
+    /* Stats: 2 colunas em mobile landscape */
     .stats {
         grid-template-columns: repeat(2, 1fr);
+        padding: 2.5rem 2rem;
     }
 
-    .filosofia-grid,
-    .depoimentos-grid {
-        grid-template-columns: 1fr;
+    /* Seções: mais padding */
+    .sobre {
+        padding: 4rem 1.5rem;
     }
+
+    .section-subtitle {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+    .hero {
+        padding: 5rem 2rem 4rem;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 0.8fr; /* Layout 2 colunas em tablet */
+        gap: 3rem;
+        text-align: left; /* Texto alinhado à esquerda */
+    }
+
+    .hero-text .tagline {
+        margin-bottom: 3rem; /* Restaura margin original */
+    }
+
+    .hero-image {
+        min-height: 400px; /* Restaura altura original em tablet */
+    }
+
+    .cta-group {
+        justify-content: flex-start; /* Alinha à esquerda */
+    }
+
+    /* Seções: padding tablet */
+    .sobre {
+        padding: 5rem 2rem;
+    }
+
+    .section-subtitle {
+        margin-bottom: 3.5rem;
+    }
+
+    /* Timeline: 2 colunas em tablet */
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Filosofia: 2 colunas em tablet */
+    .filosofia-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .filosofia-quote {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Aulas: 2 colunas em tablet */
+    .aulas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    /* Depoimentos: 2 colunas em tablet */
+    .depoimentos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    /* Seções: padding tablet */
+    .filosofia,
+    .aulas,
+    .depoimentos {
+        padding: 5rem 2rem;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .hero {
+        padding: 8rem 2rem 6rem; /* Padding desktop original */
+    }
+
+    .hero-content {
+        grid-template-columns: 1.2fr 1fr; /* Layout desktop original */
+        gap: 4rem;
+    }
+
+    .btn {
+        padding: 1.2rem 2.5rem; /* Padding desktop original */
+    }
+
+    /* Restaurar padding desktop nas seções */
+    .sobre {
+        padding: 6rem 2rem;
+    }
+
+    .section-subtitle {
+        margin-bottom: 4rem; /* Restaura margin desktop */
+    }
+
+    /* Stats: 4 colunas em desktop */
+    .stats {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        padding: 3rem;
+    }
+
+    /* Timeline: 3 colunas em desktop */
+    .timeline {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Aulas: 3 colunas em desktop */
+    .aulas-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    /* Seções: padding desktop */
+    .filosofia,
+    .aulas,
+    .depoimentos {
+        padding: 6rem 2rem;
+    }
+}
+
+/* Mobile Pequeno (< 480px) - Ajustes específicos */
+@media (max-width: 479px) {
+    .hero-text h1 {
+        font-size: clamp(1.5rem, 8vw, 2rem); /* Ainda menor em telas muito pequenas */
+    }
+
+    .hero-image {
+        min-height: 250px; /* Reduz altura mínima */
+    }
+}
+
+/* Breakpoint antigo mantido para compatibilidade (968px) */
+@media (max-width: 968px) {
+    /* Hero, timeline, grids já ajustados acima com mobile-first */
+    /* Este breakpoint mantido apenas para estilos específicos que precisam */
 
     .nav-links {
         display: none;
@@ -1325,7 +1474,7 @@ body:has(.blog-post) header {
     }
 
     .blog-post-header h1 {
-        font-size: 2rem;
+        font-size: clamp(1.75rem, 4vw + 1rem, 2rem); /* Mobile 28px → Desktop 32px */
     }
 
     .blog-post-image {

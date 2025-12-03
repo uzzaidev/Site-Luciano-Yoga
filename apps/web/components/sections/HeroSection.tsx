@@ -54,8 +54,10 @@ export function HeroSection() {
             alt="Luciano Giorgetta - Instrutor de Yôga"
             width={510}
             height={680}
-            className="object-contain"
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 80vw, 510px"
+            className="object-contain w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[680px]"
             priority
+            quality={90}
           />
         </div>
       </div>
